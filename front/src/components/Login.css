@@ -1,0 +1,102 @@
+/* 登入容器樣式 */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f0f0f0; /* 使用更輕柔的灰色背景 */
+  animation: backgroundAnimation 10s ease-in-out infinite; /* 漸變背景動畫，較為低調 */
+}
+
+/* 背景動畫 */
+@keyframes backgroundAnimation {
+  0% { background: #f0f0f0; }
+  50% { background: #e0e0e0; } /* 中性色過渡 */
+  100% { background: #f0f0f0; }
+}
+
+/* 登入卡片樣式 */
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  background-color: #ffffff;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  animation: cardAnimation 0.5s ease-out;
+}
+
+/* 登入卡片動畫 */
+@keyframes cardAnimation {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* 登入卡片懸浮效果 */
+.login-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* 標題樣式 */
+.card-title {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #343a40; /* 深灰色 */
+  text-align: center;
+}
+
+/* 輸入框樣式 */
+.form-control {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: #007bff; /* 聚焦時使用藍色 */
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+/* 登入按鈕樣式 */
+.btn-block {
+  width: 100%;
+  background-color: #007bff; /* 深藍色 */
+  border: none;
+  color: #ffffff;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-block:hover {
+  background-color: #0056b3; /* 懸停時變深藍 */
+  transform: scale(1.05);
+}
+
+/* 錯誤消息文字樣式 */
+.text-danger {
+  color: #dc3545;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* 響應式設計 */
+@media (max-width: 576px) {
+  .login-card {
+    padding: 20px;
+  }
+  .card-title {
+    font-size: 24px;
+  }
+  .btn-block {
+    font-size: 16px;
+  }
+}

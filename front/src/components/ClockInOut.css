@@ -1,0 +1,136 @@
+/* 整體容器 */
+.container {
+  background-color: #f7f9fc;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.container:hover {
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* 標題 */
+h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  text-transform: capitalize;
+  transition: color 0.3s ease;
+}
+
+h2:hover {
+  color: #1abc9c;
+}
+
+/* 按鈕樣式 */
+.btn {
+  font-size: 16px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+  margin: 10px;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+.btn-success:active {
+  transform: translateY(1px);
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  transform: translateY(-2px);
+}
+
+.btn-danger:active {
+  transform: translateY(1px);
+}
+
+/* 用於頂部文字或提示 */
+.mt-3 {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #2c3e50;
+  transition: color 0.3s ease;
+}
+
+.mt-3:hover {
+  color: #1abc9c;
+}
+
+/* 儀表板主體區 */
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  transition: all 0.3s ease;
+}
+
+.main-content {
+  flex: 1;
+  padding: 30px;
+  background-color: #fff;
+  overflow-y: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.main-content:hover {
+  transform: scale(1.02);
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  .btn {
+    width: 100%;
+    font-size: 14px;
+    padding: 12px;
+    margin-top: 10px;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .main-content {
+    padding: 20px;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .btn {
+    padding: 10px 20px;
+  }
+}
