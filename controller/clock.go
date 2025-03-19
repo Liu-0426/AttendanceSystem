@@ -96,3 +96,36 @@ func GetTodayClockInCount(c *gin.Context) {
 
     c.JSON(http.StatusOK, gin.H{"count": count})
 }
+func LineBotClockIn(userID int) (string, error) {
+    hasClockedIn, err := model.HasClockedIn(userID)
+    if err != nil {
+        return "檢查打卡狀態失敗", err
+    }
+    if hasClockedIn {
+        return "您今天已經打過卡了", nil
+    }
+
+    err = model.SaveClockIn(userID)
+    if err != nil {
+        return "打卡失敗，請稍後再試", err
+    }
+
+    return "打卡成功！", nil
+}
+
+func LineBotClockOut(userID int) (string, error) {
+    hasClockedOut, err := model.HasClockedOut(userID)
+    if err != nil {
+        return "檢查下班打卡狀態失敗", err
+    }
+    if hasClockedOut {
+        return "您今天已經打過下班卡了", nil
+    }
+
+    err = model.SaveClockOut(userID)
+    if err != nil {
+        return "下班打卡失敗，請稍後再試", err
+    }
+
+    return "下班打卡成功！", nil
+}

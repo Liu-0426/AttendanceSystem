@@ -79,3 +79,15 @@ func SaveUserToDB(user User) error {
 
 	return nil
 }
+func BindLineUserID(username, lineUserID string) error {
+    _, err := db.Exec("UPDATE users SET line_user_id = ? WHERE username = ?", lineUserID, username)
+    return err
+}
+func GetUserIDByUsername(username string) (int, error) {
+    var userID int
+    err := db.QueryRow("SELECT id FROM users WHERE username = ?", username).Scan(&userID)
+    if err != nil {
+        return 0, err
+    }
+    return userID, nil
+}

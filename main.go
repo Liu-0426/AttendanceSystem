@@ -4,6 +4,7 @@ import (
     "github.com/gin-gonic/gin"
     "easyBackend/controller"
     "easyBackend/middleware"
+	"easyBackend/linebot" 
 )
 
 
@@ -14,6 +15,7 @@ func main() {
 
     r.POST("/login", controller.Login)
 	r.POST("/register", controller.RegisterHandler)
+	r.POST("/line/webhook", linebot.WebhookHandler)
 
     protected := r.Group("/api", middleware.JWTMiddleware())
 	{
